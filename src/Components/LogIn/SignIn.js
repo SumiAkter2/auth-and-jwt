@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import "./Login.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import Google from "./Google";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-
-const LogIn = () => {
+import { useNavigate } from "react-router-dom";
+const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
   const passwordHandle = (e) => {
     const passwordInput = e.target.value;
     //   const pass='^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$'
@@ -45,13 +47,15 @@ const LogIn = () => {
     if (password.value === "") {
       setPassword({ value: "", error: "Password is required" });
     }
-    signInWithEmailAndPassword(email, password);
+    createUserWithEmailAndPassword(email, password);
     console.log(email, password);
   };
-
+  if (user) {
+    navigate("/");
+  }
   return (
     <div className="w-50 mx-auto">
-      <h1>Log In</h1>
+      <h1>Sign Up</h1>
       <Form onClick={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -101,11 +105,11 @@ const LogIn = () => {
         </Form.Group>
         {email.value && password.value ? (
           <Button variant="primary" type="submit">
-            Log In
+            Sign Up
           </Button>
         ) : (
           <Button disabled variant="primary">
-            Log IN
+            Sign Up
           </Button>
         )}
       </Form>
@@ -114,4 +118,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignIn;
