@@ -1,0 +1,88 @@
+.cards {
+    width: 290px;
+    height: 354px;
+    padding: .8em;
+    background: #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    overflow: visible;
+    transition: .3s ease;
+    box-shadow: 15px 15px 30px #bebebe,
+            -15px -15px 30px #ffffff;
+}
+
+.cards-img {
+    background-color: rgb(197, 126, 197);
+    height: 40%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+    position: relative;
+   
+}
+
+.cards-info {
+    padding-top: 10%;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cards-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+.blob{
+    background-color:rgb(157, 79, 157);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    text-align: center;
+    margin: 0px auto;
+    transition: .6s ease-out;
+}
+
+
+.text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+
+/*Button*/
+.cards-button {
+    border: 1px solid #9e9d9d;
+    display: flex;
+    padding: .5em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+}
+
+/*Hover*/
+.cards-img:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+}
+.cards-img:hover .blob {
+    position: absolute;
+    left: 90px;
+    bottom: 90px;
+    
+}
+.cards-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #ffcaa6;
+}
