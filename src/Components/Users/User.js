@@ -19,7 +19,7 @@ const User = ({ user, children }) => {
         </div>
         <div>
           <p className="text-title cards-info d-flex justify-content-between">
-            {name} <span> Id:{id}</span>
+            {name} <span className="px-3"> Id:{id}</span>
           </p>
           <div className="text-body">
             <p className="">{email} </p>
@@ -31,7 +31,7 @@ const User = ({ user, children }) => {
           <div className="cards-footer">
             <span
               className="d-flex justify-content-center align-items-center details-button"
-              onClick={() => navigate(`/user/${id}`)}
+              onClick={()=>window.history.go(-1)}
             >
               <AiFillFastBackward className="" size="30px" />
               Back
