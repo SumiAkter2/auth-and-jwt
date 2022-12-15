@@ -12,7 +12,7 @@
 }
 
 .cards-img {
-    background-color: rgb(197, 126, 197);
+    background-color: peru;
     height: 40%;
     width: 100%;
     border-radius: .5rem;
@@ -22,7 +22,7 @@
 }
 
 .cards-info {
-    padding-top: 10%;
+    padding-top: 20px;
 }
 
 svg {
@@ -31,43 +31,55 @@ svg {
 }
 
 .cards-footer {
+    margin-top: 30px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid peru;
 }
 
 /*Text*/
 .text-title {
     font-weight: 900;
     font-size: 1.2em;
-    line-height: 1.5;
+    line-height: .1;
 }
 .blob{
-    background-color:rgb(157, 79, 157);
+    background-color:#fac5a1;
     width: 80px;
     height: 80px;
     border-radius: 100%;
     text-align: center;
     margin: 0px auto;
-    transition: .6s ease-out;
+    transition: .1s ease-out;
 }
 
 
 .text-body {
     font-size: .9em;
-    padding-bottom: 10px;
+    line-height: 1;
+    /* padding-bottom: 10px; */
 }
-
+.details-button{
+    border: 1px solid peru;
+        width: 100px;
+        height: 40px;
+        padding: .3em;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: .3s ease-in-out;
+}
 /*Button*/
 .cards-button {
-    border: 1px solid #9e9d9d;
+    border: 1px solid peru;
     display: flex;
-    padding: .5em;
+    width: 40px; 
+    height: 40px; 
+     padding: .3em;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 30px;
     transition: .3s ease-in-out;
 }
 
@@ -84,5 +96,9 @@ svg {
 }
 .cards-button:hover {
     border: 1px solid #ffcaa6;
-    background-color: #ffcaa6;
+    background-color: peru;
+}
+.details-button:hover {
+    border: 1px solid #ffcaa6;
+        background-color: peru;
 }

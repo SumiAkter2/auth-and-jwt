@@ -53,7 +53,7 @@ const Navigation = () => {
                   isActive ? activeStyle : nonActiveStyle
                 }
               >
-                Users
+                All Users
               </NavLink>
             </li>
             <li className="nav-item">

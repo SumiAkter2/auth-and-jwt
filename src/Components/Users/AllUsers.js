@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 import useUsers from "../../Hook/useUsers";
 import User from "./User";
 
-const Users = () => {
-  const users = useUsers(`https://jsonplaceholder.typicode.com/users`);
-
-  if (users.length) {
-    users.length = 4;
-  }
+const AllUsers = () => {
+  const allUsers = useUsers("https://jsonplaceholder.typicode.com/users");
   return (
     <div className="row container mx-auto ">
-      {users.map((user) => (
+      {allUsers.map((user) => (
         <User key={user.id} user={user} />
       ))}
       <Link to="/users">Load more</Link>
@@ -19,4 +15,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default AllUsers;
